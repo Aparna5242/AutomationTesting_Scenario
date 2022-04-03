@@ -7,28 +7,25 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class Scenario_4 
+public class Scenario_Gecko 
 {
- 
-	@SuppressWarnings("deprecation")
+
 	public static void main(String[] args) throws InterruptedException 
 	{
 		// TODO Auto-generated method stub
-
-				
-				 
-				System.setProperty("webdriver.chrome.driver","C:\\Users\\Sushant\\Desktop\\Java\\chromedriver.exe");
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-notifications"); 
-				 
-				WebDriver driver = new ChromeDriver(options); // Open Browser 
+		// TODO Auto-generated method stub  
+				System.setProperty("webdriver.gecko.driver","C:\\Users\\Sushant\\Desktop\\Java\\geckodriver.exe");
+				FirefoxOptions options = new FirefoxOptions();
+				options.setProfile(new FirefoxProfile());
+				options.addPreference("dom.webnotifications.enabled", false);
+				WebDriver driver = new FirefoxDriver(options); // Open Browser 
+				driver.manage().window().maximize(); // Maximize browser window
 				driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 				driver.manage().window().maximize(); // Maximize browser window
 				driver.get("https://www.myntra.com/"); // Navigate to Myntra.com

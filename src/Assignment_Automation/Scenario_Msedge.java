@@ -8,28 +8,22 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class Scenario_4 
+public class Scenario_Msedge 
 {
- 
-	@SuppressWarnings("deprecation")
+
 	public static void main(String[] args) throws InterruptedException 
 	{
 		// TODO Auto-generated method stub
-
+		// TODO Auto-generated method stub  
+				System.setProperty("webdriver.edge.driver","C:\\Users\\Sushant\\Desktop\\Java\\msedgedriver.exe");
 				
-				 
-				System.setProperty("webdriver.chrome.driver","C:\\Users\\Sushant\\Desktop\\Java\\chromedriver.exe");
-				ChromeOptions options = new ChromeOptions();
-				options.addArguments("--disable-notifications"); 
-				 
-				WebDriver driver = new ChromeDriver(options); // Open Browser 
-				driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+				WebDriver driver = new EdgeDriver(); // Open Browser 
+				driver.manage().window().maximize(); // Maximize browser window
+	            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 				driver.manage().window().maximize(); // Maximize browser window
 				driver.get("https://www.myntra.com/"); // Navigate to Myntra.com
 		        Thread.sleep(3000);
