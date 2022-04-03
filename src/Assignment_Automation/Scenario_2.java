@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
  
 public class Scenario_2 
 {
-
 	public static void main(String[] args) throws InterruptedException
 	{
 		// TODO Auto-generated method stub
@@ -32,9 +31,9 @@ public class Scenario_2
 		List<WebElement>link = trending.findElements(By.tagName("a"));
 		int count=link.size();
 		System.out.println("Number of links="+count);
-	    for(int i=0;i<link.size();i++)
-		{
-			
+	    	
+		for(int i=0;i<link.size();i++)
+		{			
 			System.out.println(link.get(i).getText());
 			link.get(i).click();
 			Thread.sleep(3000);
@@ -43,14 +42,12 @@ public class Scenario_2
 			link = trending.findElements(By.tagName("a"));
 		}
 	
-	    WebElement link1 = driver.findElement(By.xpath("//*[@id=\"bd\"]/ol[2]/li/div/div/ul/li/div[2]/ul/li[1]/a"));
-        link1.click();
-        System.out.println("Country -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[1]")).getText());
-        System.out.println("Cases -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[2]")).getText());
-        System.out.println("Deaths -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[4]")).getText());
-        driver.quit();
-
-		        
+		WebElement link1 = driver.findElement(By.xpath("//*[@id=\"bd\"]/ol[2]/li/div/div/ul/li/div[2]/ul/li[1]/a"));
+		link1.click();
+		System.out.println("Country -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[1]")).getText());
+		System.out.println("Cases -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[2]")).getText());
+		System.out.println("Deaths -"+driver.findElement(By.xpath("//*[@class='dd coronavirusTable']//tbody/tr/td[4]")).getText());
+		driver.quit();		        
 	}
 	
 }
